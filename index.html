@@ -8,166 +8,31 @@
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <p class="eyebrow">AI MOTION AD WORKFLOW</p>
-      <h1>Motion Ad Studio</h1>
-      <p class="subhead">10초·30초 광고를 스토리보드와 생성형 영상 프롬프트로 설계합니다.</p>
-    </div>
-    <div class="top-actions">
-      <button id="saveBtn" class="ghost-btn">프로젝트 저장</button>
-      <button id="loadBtn" class="ghost-btn">저장본 불러오기</button>
-      <span class="status-pill">10초 · 30초 광고 설계</span>
-    </div>
+    <div><p class="eyebrow">AI MOTION AD STORY MAKER</p><h1>Motion Ad Studio</h1><p class="subhead">만들고 싶은 광고를 한 문장으로 설명하면 10초·30초 영상 스토리와 생성 프롬프트로 바꿉니다.</p></div>
+    <div class="top-actions"><button id="saveBtn" class="ghost-btn">프로젝트 저장</button><button id="loadBtn" class="ghost-btn">저장본 불러오기</button><span class="status-pill">IDEA → STORY → VIDEO</span></div>
   </header>
-
   <main class="workspace">
     <section class="panel input-panel">
-      <div class="section-title">
-        <h2>광고 기획</h2>
-        <button id="presetBtn" class="ghost-btn">창업경진대회 예시</button>
-      </div>
-
-      <label>광고 목적</label>
-      <select id="purpose">
-        <option>창업경진대회 발표광고</option>
-        <option>퍼스널 브랜딩</option>
-        <option>제품/서비스 홍보</option>
-        <option>교육프로그램 홍보</option>
-      </select>
-
-      <label>영상 길이</label>
-      <div class="segmented">
-        <button class="duration-btn active" data-duration="10">10초</button>
-        <button class="duration-btn" data-duration="30">30초</button>
-      </div>
-
-      <label>브랜드명</label>
-      <input id="brand" placeholder="예: Algo" />
-
-      <label>핵심 문제</label>
-      <textarea id="problem" placeholder="고객이 겪는 문제를 한두 문장으로 입력"></textarea>
-
-      <label>해결책 / 핵심 기능</label>
-      <textarea id="solution" placeholder="앱이나 서비스가 어떻게 해결하는지 입력"></textarea>
-
-      <label>타깃</label>
-      <input id="target" placeholder="예: 취업 준비 청년, 초기 창업자" />
-
-      <label>핵심 메시지</label>
-      <input id="message" placeholder="예: 연결이 기회를 만든다" />
-
-      <div class="two-col">
-        <div>
-          <label>분위기</label>
-          <select id="mood">
-            <option>프리미엄 · 세련됨</option>
-            <option>빠르고 강렬함</option>
-            <option>따뜻하고 공감적</option>
-            <option>미래적 · 테크</option>
-            <option>밝고 친근함</option>
-          </select>
-        </div>
-        <div>
-          <label>프롬프트 밀도</label>
-          <select id="promptDensity">
-            <option value="short">짧고 안정적</option>
-            <option value="balanced">균형형</option>
-            <option value="cinematic">시네마틱 상세</option>
-          </select>
-        </div>
-      </div>
-
-      <label>기준 이미지</label>
-      <div class="upload-box">
-        <input id="referenceImage" type="file" accept="image/*" />
-        <div id="uploadPlaceholder" class="upload-placeholder">
-          <strong>캐릭터 기준 이미지를 선택하세요</strong>
-          <span>이미지는 브라우저 안에서만 미리보기되며 외부로 전송하지 않습니다.</span>
-        </div>
-        <div id="imagePreviewWrap" class="image-preview-wrap hidden">
-          <img id="imagePreview" alt="기준 이미지 미리보기" />
-          <div>
-            <strong id="imageName"></strong>
-            <button id="removeImageBtn" type="button" class="text-btn">이미지 제거</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="toggle-row">
-        <div>
-          <strong>캐릭터 일관성 잠금</strong>
-          <small>기준 이미지의 얼굴·의상·연령·인종·헤어스타일을 장면마다 유지</small>
-        </div>
-        <input id="characterLock" type="checkbox" checked />
-      </div>
-
-      <div class="toggle-row">
-        <div>
-          <strong>한국인 캐릭터 우선</strong>
-          <small>인물이 필요한 장면에서는 한국인 외형을 우선 지시</small>
-        </div>
-        <input id="koreanCast" type="checkbox" checked />
-      </div>
-
-      <label>자막 전략</label>
-      <select id="subtitleMode">
-        <option value="post">후편집용 한글 자막</option>
-        <option value="none">영상 생성 단계 무자막</option>
-        <option value="placeholder">영문 플레이스홀더</option>
-      </select>
-
-      <div class="warning-box">
-        <strong>한글 자막 생성 주의</strong>
-        <p>생성형 영상에서 한글을 직접 그리면 오타가 발생하기 쉽습니다. 영상은 무자막으로 생성하고 한글은 후편집하는 방식을 권장합니다.</p>
-      </div>
-
-      <button id="generateBtn" class="primary-btn">스토리보드 & 프롬프트 생성</button>
+      <div class="section-title"><h2>어떤 모션광고를 만들고 싶나요?</h2><button id="presetBtn" class="ghost-btn">예시 보기</button></div>
+      <textarea id="idea" class="idea-input" placeholder="예: 혼자 창업을 준비하는 한국인 여성이 필요한 사람과 정보를 찾지 못해 힘들어하다가 Algo를 통해 전문가와 연결되고 자신감을 얻는 30초 광고. 따뜻하면서 세련된 느낌으로 만들고 싶어."></textarea>
+      <p class="input-help">제품·서비스, 주인공, 상황, 원하는 변화, 분위기를 자유롭게 적으세요. 완벽하게 쓰지 않아도 됩니다.</p>
+      <label>영상 길이</label><div class="segmented"><button class="duration-btn active" data-duration="10">10초</button><button class="duration-btn" data-duration="30">30초</button></div>
+      <div class="two-col"><div><label>분위기</label><select id="mood"><option>자동 판단</option><option>프리미엄 · 세련됨</option><option>빠르고 강렬함</option><option>따뜻하고 공감적</option><option>미래적 · 테크</option><option>밝고 친근함</option></select></div><div><label>프롬프트 밀도</label><select id="promptDensity"><option value="short">짧고 안정적</option><option value="balanced">균형형</option><option value="cinematic">시네마틱 상세</option></select></div></div>
+      <label>기준 이미지 <span class="optional">선택</span></label><div class="upload-box"><input id="referenceImage" type="file" accept="image/*" /><div id="uploadPlaceholder" class="upload-placeholder"><strong>주인공 기준 이미지가 있다면 선택하세요</strong><span>브라우저 미리보기만 사용하며 외부로 전송하지 않습니다.</span></div><div id="imagePreviewWrap" class="image-preview-wrap hidden"><img id="imagePreview" alt="기준 이미지 미리보기" /><div><strong id="imageName"></strong><button id="removeImageBtn" type="button" class="text-btn">이미지 제거</button></div></div></div>
+      <div class="toggle-row"><div><strong>캐릭터 일관성 잠금</strong><small>기준 이미지의 얼굴·의상·연령·외형을 모든 장면에서 유지</small></div><input id="characterLock" type="checkbox" checked /></div>
+      <div class="toggle-row"><div><strong>한국인 캐릭터 우선</strong><small>아이디어에 다른 설정이 없으면 한국인 인물로 구성</small></div><input id="koreanCast" type="checkbox" checked /></div>
+      <label>자막 전략</label><select id="subtitleMode"><option value="post">후편집용 한글 자막</option><option value="none">영상 생성 단계 무자막</option><option value="placeholder">영문 플레이스홀더</option></select>
+      <div class="warning-box"><strong>한글 자막은 후편집 권장</strong><p>영상 생성 단계에서는 한글을 직접 만들지 않고, 정확한 자막 문구만 별도로 설계합니다.</p></div>
+      <button id="generateBtn" class="primary-btn">AI 스토리 만들기</button>
     </section>
-
     <section class="panel output-panel">
-      <div class="output-toolbar">
-        <div>
-          <strong id="outputTitle">새 프로젝트</strong>
-          <span id="outputMeta">아직 생성된 결과가 없습니다.</span>
-        </div>
-        <div class="toolbar-actions">
-          <button id="copyAllBtn" class="ghost-btn" disabled>전체 복사</button>
-          <button id="downloadBtn" class="ghost-btn" disabled>TXT 다운로드</button>
-        </div>
-      </div>
-
-      <nav class="tabs">
-        <button class="tab active" data-tab="storyboard">스토리보드</button>
-        <button class="tab" data-tab="flow">Flow 프롬프트</button>
-        <button class="tab" data-tab="subtitle">자막/후편집</button>
-        <button class="tab" data-tab="checklist">생성 체크리스트</button>
-      </nav>
-
-      <div id="storyboard" class="tab-content active"></div>
-      <div id="flow" class="tab-content"></div>
-      <div id="subtitle" class="tab-content"></div>
-      <div id="checklist" class="tab-content"></div>
+      <div class="output-toolbar"><div><strong id="outputTitle">새 스토리</strong><span id="outputMeta">아이디어를 입력하면 광고 스토리가 만들어집니다.</span></div><div class="toolbar-actions"><button id="copyAllBtn" class="ghost-btn" disabled>전체 복사</button><button id="downloadBtn" class="ghost-btn" disabled>TXT 다운로드</button></div></div>
+      <nav class="tabs"><button class="tab active" data-tab="concept">스토리 콘셉트</button><button class="tab" data-tab="storyboard">스토리보드</button><button class="tab" data-tab="flow">영상 프롬프트</button><button class="tab" data-tab="subtitle">자막</button><button class="tab" data-tab="checklist">체크</button></nav>
+      <div id="concept" class="tab-content active"></div><div id="storyboard" class="tab-content"></div><div id="flow" class="tab-content"></div><div id="subtitle" class="tab-content"></div><div id="checklist" class="tab-content"></div>
     </section>
   </main>
-
   <div id="toast" class="toast" role="status"></div>
-
-  <template id="sceneTemplate">
-    <article class="scene-card">
-      <div class="scene-head">
-        <span class="time-badge"></span>
-        <button class="copy-btn">장면 복사</button>
-      </div>
-      <h3 class="scene-title"></h3>
-      <div class="scene-grid">
-        <div><span>화면</span><p class="scene-visual"></p></div>
-        <div><span>카메라/모션</span><p class="scene-motion"></p></div>
-        <div><span>자막</span><p class="scene-subtitle"></p></div>
-      </div>
-      <div class="prompt-box"><span>생성 프롬프트</span><p class="scene-prompt"></p></div>
-    </article>
-  </template>
-
+  <template id="sceneTemplate"><article class="scene-card"><div class="scene-head"><span class="time-badge"></span><button class="copy-btn">장면 복사</button></div><h3 class="scene-title"></h3><div class="scene-grid"><div><span>화면</span><p class="scene-visual"></p></div><div><span>카메라/모션</span><p class="scene-motion"></p></div><div><span>자막</span><p class="scene-subtitle"></p></div></div><div class="prompt-box"><span>생성 프롬프트</span><p class="scene-prompt"></p></div></article></template>
   <script src="app.js"></script>
 </body>
 </html>
